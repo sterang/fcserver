@@ -24,5 +24,5 @@ router.get('/',(req, res)=>{
 });
 
 app.use(router);
-
+app.use(express.static('public'));
 app.listen(3000,()=> console.log(`Server running port 3000`));
