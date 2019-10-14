@@ -2,6 +2,7 @@
 const express = require('express');
 const activitiesRoutes = require('./activities/activities_routes');
 const estudianteRoutes = require('./authE/authE_routes');
+const docenteRoutes = require('./authD/authD_routes');
 const properties = require('./config/properties');
 const DB = require('./config/db');
 //init DB
@@ -21,6 +22,8 @@ app.use('/api', router);
 activitiesRoutes(router);
 //app.use('/api', router);
 estudianteRoutes(router);
+
+docenteRoutes(router);
 router.get('/',(req, res)=>{
     res.send('Hello From home');
 });
