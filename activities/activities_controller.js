@@ -47,7 +47,7 @@ exports.allActivities = (req,res,next)=>{
         if(!activities){
             res.status(409).send({message:'Something Error'});
         } else{
-            res.send({activities});
+            res.send(activities);
         }
     })
 }

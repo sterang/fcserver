@@ -39,7 +39,7 @@ exports.allContent = (req,res,next)=>{
         if(!contents){
             res.status(409).send({message:'Something Error'});
         } else{
-            res.send({contents});
+            res.send(contents);
         }
     })
 }

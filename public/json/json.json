@@ -1,0 +1,10 @@
+{
+    "id_CREA":1,
+    "tipo_CREA":1,
+    "id_materia":1,
+    "grado10":1,
+    "grado11":0,
+    "nombre_CREA":"Sumar Vectores",
+    "urlrepositorio":"localhost:3000/images/close_up.png",
+    "descripcion_CREA":"Esta es una descripcion de lo que funciona"
+}
