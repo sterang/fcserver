@@ -3,7 +3,8 @@ const express = require('express');
 const activitiesRoutes = require('./activities/activities_routes');
 const estudianteRoutes = require('./authE/authE_routes');
 const docenteRoutes = require('./authD/authD_routes');
-const properties = require('./config/properties');
+const contentRoutes = require('./contentREA/content_routes');
+//const properties = require('./config/properties');
 const DB = require('./config/db');
 //init DB
 DB();
@@ -24,6 +25,8 @@ activitiesRoutes(router);
 estudianteRoutes(router);
 
 docenteRoutes(router);
+
+contentRoutes(router);
 router.get('/',(req, res)=>{
     res.send('Hello From home');
 });
