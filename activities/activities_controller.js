@@ -29,7 +29,7 @@ exports.loadActivities = (req, res, next)=>{
         id_actividad: req.body.id_actividad,
     }
     console.log(activityData);
-    Activities.findOne({id_actividad: 1}, (err, activity)=>{
+    Activities.findOne({id_actividad: activityData.id_actividad}, (err, activity)=>{
         if(err) return res.status(500).send('Server Error');
         if(!activity){
             res.status(409).send({message:'Something Error'});
