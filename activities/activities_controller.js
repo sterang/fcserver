@@ -38,6 +38,19 @@ exports.loadActivities = (req, res, next)=>{
         }
     })
 }
+exports.allActivities = (req,res,next)=>{
+    const activityData={
+        id_materia: req.body.id_materia,
+    }
+    Activities.find(function(err, activities){
+        if(err) return res.status(500).send('Server Error');
+        if(!activities){
+            res.status(409).send({message:'Something Error'});
+        } else{
+            res.send({activities});
+        }
+    })
+}
 
 
 //id_actividad	id_colegio	id_docente	id_materia	id_competencia	titulo_actividad	

@@ -30,7 +30,19 @@ exports.loadContentREA= (req,res,next)=>{
         }
     })
 }
-
+exports.allContent = (req,res,next)=>{
+    const contentData={
+        id_materia: req.body.id_materia,
+    }
+    ContentREA.find(function(err, contents){
+        if(err) return res.status(500).send('Server Error');
+        if(!contents){
+            res.status(409).send({message:'Something Error'});
+        } else{
+            res.send({contents});
+        }
+    })
+}
 
 //id_CREA	tipo_CREA	id_materia	grado10	
 //grado11	
