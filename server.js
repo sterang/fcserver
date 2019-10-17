@@ -5,6 +5,7 @@ const activitiesRoutes = require('./activities/activities_routes');
 const estudianteRoutes = require('./authE/authE_routes');
 const docenteRoutes = require('./authD/authD_routes');
 const contentRoutes = require('./contentREA/content_routes');
+const eventosRoutes = require('./eventos/eventos_routes');
 //const properties = require('./config/properties');
 const DB = require('./config/db');
 //init DB
@@ -18,7 +19,7 @@ const bodyParser = require('body-parser');
 const multipart = require('connect-multiparty');  
 
 const multipartMiddleware = multipart({  
-    uploadDir: './public/images'
+    uploadDir: './public/repositorio'
 });
 
 const bodyParserJSON = bodyParser.json();
@@ -43,6 +44,8 @@ estudianteRoutes(router);
 docenteRoutes(router);
 
 contentRoutes(router);
+
+eventosRoutes(router);
 router.get('/',(req, res)=>{
     res.send('Hello From home');
 });
