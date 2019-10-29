@@ -15,7 +15,7 @@ exports.createActivities = (req,res,next)=>{
         urllectura: req.body.urllectura,
         test: req.body.test,
         html: req.body.html,
-        urlhtml: req.body.urlhtml,
+        urlhtml: req.body.urlhtml
     }
     console.log(newActivities);
     Activities.create(newActivities,(err,activity)=>{
@@ -24,7 +24,7 @@ exports.createActivities = (req,res,next)=>{
     })
 }
 
-exports.loadActivities = (req, res, next)=>{
+exports.loadActivity = (req, res, next)=>{
     const activityData={
         id_actividad: req.body.id_actividad,
     }
@@ -50,6 +50,38 @@ exports.allActivities = (req,res,next)=>{
             res.send(activities);
         }
     })
+}
+
+exports.editActivity = async (req, res) => {
+    const activityData={
+        id_actividad: req.body.id_actividad,
+    }
+    const activityNewData = {
+        id_colegio: req.body.id_actividad,
+        id_docente: req.body.id_materia,
+        id_materia: req.body.id_materia,
+        id_competencia: req.body.id_competencia,
+        titulo_actividad: req.body.titulo_actividad,
+        descripcion_materia: req.body.descripcion_materia,
+        video: req.body.video,
+        urlvideo: req.body.urlvideo,
+        lectura: req.body.lectura,
+        urllectura: req.body.urllectura,
+        test: req.body.test,
+        html: req.body.html,
+        urlhtml: req.body.urlhtml
+    }
+    await Activities.updateOne({id_actividad: activityData.id_actividad}, {$set: activityNewData}, {new: true});
+    res.json({status: 'Actividad Actualizada'});
+}
+
+
+exports.deleteActivity = async (req, res) => {
+    const activityData = {
+        id_actividad: req.body.id_actividad
+    }
+    await Activities.deleteOne({id_actividad: activityData.id_actividad});
+    res.json({Estado: 'Actividad Eliminada' })
 }
 
 

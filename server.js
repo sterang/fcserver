@@ -6,6 +6,7 @@ const estudianteRoutes = require('./authE/authE_routes');
 const docenteRoutes = require('./authD/authD_routes');
 const contentRoutes = require('./contentREA/content_routes');
 const eventosRoutes = require('./eventos/eventos_routes');
+const subjectRoutes = require('./subject/subject_routes');
 //const properties = require('./config/properties');
 const DB = require('./config/db');
 //init DB
@@ -28,10 +29,13 @@ const bodyParserURLEncode = bodyParser.urlencoded({extended:true});
 app.use(bodyParserJSON);
 app.use(bodyParserURLEncode);
 
-app.post('/subir', multipartMiddleware, (req, res, next) => {  
-    console.log(req.files);
+app.post('/subir', multipartMiddleware, (req, res) => {  
+    console.log(req.files.uploads[0].path);
+    const urls = req.files.uploads[0].path;
+    const numero = urls.lastIndexOf("/");
+    const lasturl = urls.substring(19);
     res.json({
-        'message': `File uploaded succesfully. Nombre: ${req.query}`
+        'url': `http://localhost:3000/public/repositorio/${lasturl}`
     });
 });
 
@@ -46,6 +50,8 @@ docenteRoutes(router);
 contentRoutes(router);
 
 eventosRoutes(router);
+
+subjectRoutes(router);
 router.get('/',(req, res)=>{
     res.send('Hello From home');
 });

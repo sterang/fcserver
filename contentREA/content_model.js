@@ -18,12 +18,7 @@ const contentSchema = new Schema({
         required: true,
         trim: true,
     },
-    grado10:{
-        type: Number,
-        required: true,
-        trim: true,
-    },
-    grado11:{
+    id_grado:{
         type: Number,
         required: true,
         trim: true,
@@ -45,6 +40,7 @@ const contentSchema = new Schema({
 },{timestamps:true});
 
 module.exports = contentSchema;
+//module.exports = mongoose.model('contents', contentSchema);
 //id_CREA	tipo_CREA	id_materia	grado10	
 //grado11	
 //nombre_CREA	urlrepositorio	descripcion_CREA
