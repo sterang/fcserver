@@ -7,6 +7,7 @@ const docenteRoutes = require('./authD/authD_routes');
 const contentRoutes = require('./contentREA/content_routes');
 const eventosRoutes = require('./eventos/eventos_routes');
 const subjectRoutes = require('./subject/subject_routes');
+const gradeRoutes = require('./grade/grade_routes');
 //const properties = require('./config/properties');
 const DB = require('./config/db');
 //init DB
@@ -44,14 +45,12 @@ app.use('/api', router);
 activitiesRoutes(router);
 //app.use('/api', router);
 estudianteRoutes(router);
-
 docenteRoutes(router);
-
 contentRoutes(router);
-
 eventosRoutes(router);
-
 subjectRoutes(router);
+gradeRoutes(router);
+
 router.get('/',(req, res)=>{
     res.send('Hello From home');
 });
