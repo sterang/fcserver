@@ -5,6 +5,7 @@ exports.createSubject = async (req, res, next)=>{
         id_materia: req.body.id_materia,
         nombre_materia: req.body.nombre_materia,
         id_colegio: req.body.id_colegio,
+        id_areaMateria: req.body.id_areaMateria,
         url_imagen: req.body.url_imagen
     }
     console.log(newSubject);

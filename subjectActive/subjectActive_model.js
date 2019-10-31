@@ -2,14 +2,29 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-const subjectSchema = new Schema({
+const subjectActiveSchema = new Schema({
+    id_materiaActiva:{
+        type: Number,
+        required: true,
+        trim: true,
+    },
+    nombre_materiaActiva:{
+        type: String,
+        required: true,
+        trim: true,
+    },
     id_materia:{
         type: Number,
         required: true,
         trim: true,
     },
-    nombre_materia:{
-        type: String,
+    id_grado:{
+        type: Number,
+        required: true,
+        trim: true,
+    },
+    id_docente:{
+        type: Number,
         required: true,
         trim: true,
     },
@@ -18,19 +33,9 @@ const subjectSchema = new Schema({
         required: true,
         trim: true,
     },
-    id_areaMateria:{
-        type: Number,
-        required: true,
-        trim: true,
-    },
-    url_imagen:{
-        type: String,
-        required: true,
-        trim: true,
-    },
 },{timestamps:true});
 
-module.exports = subjectSchema;
+module.exports = subjectActiveSchema;
 //module.exports = mongoose.model('contents', contentSchema);
-//id_Materia	
-//nombre_Materia
+//id_materiaActiva  id_materia  id_docente  id_colegio
+//nombre_materiaActiva

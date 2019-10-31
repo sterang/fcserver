@@ -7,12 +7,6 @@ exports.createDocente = (req, res, next)=>{
         nombre_docente: req.body.nombre_docente,
         apellido_docente: req.body.apellido_docente,
         id_colegio: req.body.id_colegio,
-        id_materia1: req.body.id_materia1,
-        id_materia2: req.body.id_materia2,
-        grado10_materia1:req.body.grado10_materia1,
-        grado11_materia1:req.body.grado11_materia1,
-        grado10_materia2:req.body.grado10_materia2,
-        grado11_materia2:req.body.grado11_materia2,
         nombre_usuario: req.body.nombre_usuario,
         contrasena: req.body.contrasena,
         correo_electronico: req.body.correo_electronico

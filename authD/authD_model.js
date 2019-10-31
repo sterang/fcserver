@@ -27,30 +27,6 @@ const docenteSchema = new Schema({
         type: Number,
         trim: true,
     },
-    id_materia1:{
-        type: Number,
-        trim: true,
-    },
-    id_materia2:{
-        type: Number,
-        trim: true,
-    },
-    grado10_materia1:{
-        type: Number,
-        trim: true,
-    },
-    grado11_materia1:{
-        type: Number,
-        trim: true,
-    },
-    grado10_materia2:{
-        type: Number,
-        trim: true,
-    },
-    grado11_materia2:{
-        type: Number,
-        trim: true,
-    },
     nombre_usuario:{
         type: String,
         required: true,

@@ -2,19 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-const subjectSchema = new Schema({
-    id_materia:{
+const competenciaSchema = new Schema({
+    id_competencia:{
         type: Number,
         required: true,
         trim: true,
     },
-    nombre_materia:{
+    nombre_competencia:{
         type: String,
-        required: true,
-        trim: true,
-    },
-    id_colegio:{
-        type: Number,
         required: true,
         trim: true,
     },
@@ -23,14 +18,19 @@ const subjectSchema = new Schema({
         required: true,
         trim: true,
     },
-    url_imagen:{
-        type: String,
+    gradoInicial:{
+        type: Number,
+        required: true,
+        trim: true,
+    },
+    gradoFinal:{
+        type: Number,
         required: true,
         trim: true,
     },
 },{timestamps:true});
 
-module.exports = subjectSchema;
+module.exports = competenciaSchema;
 //module.exports = mongoose.model('contents', contentSchema);
-//id_Materia	
-//nombre_Materia
+//id_competencia id_materiaCompetencia gradoInicial gradoFinal	
+//nombre_copetencia

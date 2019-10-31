@@ -15,7 +15,7 @@ exports.loadType = (req,res,next)=>{
     const typeData={
         id_tipoContenido: req.body.id_tipoContenido
     }
-    Type.findOne({id_tipoContenido: gradeData.id_tipoContenido},(err, type)=>{
+    Type.findOne({id_tipoContenido: typeData.id_tipoContenido},(err, type)=>{
         if(err) return res.status(500).send('Server Error');
         if(!type){
             res.status(409).send({message:`Something Error ${err}`});
