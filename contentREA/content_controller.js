@@ -29,10 +29,8 @@ exports.loadContentREA= (req,res,next)=>{
         }
     })
 }
+
 exports.allContent = (req,res,next)=>{
-    const contentData={
-        id_materia: req.body.id_materia
-    }
     ContentREA.find(function(err, contents){
         if(err) return res.status(500).send('Server Error');
         if(!contents){
@@ -53,7 +51,7 @@ exports.deleteContentREA = async (req, res) => {
     const contentData = {
         id_CREA: req.body.id_CREA
     }
-    await ContentREA.deleteOne({id_CREA: req.body.id_CREA});
+    await ContentREA.deleteOne({id_CREA: contentData.id_CREA});
     res.json({Estado: 'Contenido Eliminado' })
 }
 

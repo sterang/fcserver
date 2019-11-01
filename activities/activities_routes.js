@@ -1,8 +1,8 @@
 const Activities = require('./activities_controller');
 module.exports=(router)=> {
-    router.post('/createActivities', Activities.createActivities);
+    router.post('/createActivity', Activities.createActivity);
     router.post('/loadActivity', Activities.loadActivity);
-    router.get('/loadAllactivities', Activities.allActivities);
-    router.put('/editActivity', Activities.editActivity);
+    router.get('/loadAllActivities', Activities.allActivities);
+    router.put('/uploadActivity', Activities.uploadActivity);
     router.delete('/deleteActivity', Activities.deleteActivity);
 }

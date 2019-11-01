@@ -9,7 +9,7 @@ const eventoSchema = new Schema({
         required: true,
         trim: true
     },
-    fecha: {
+    fecha:{
         type: String,
         required:true,
         trim: true

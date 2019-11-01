@@ -14,8 +14,8 @@ exports.createSubject = async (req, res, next)=>{
         res.send({subject});
     })
 }
-exports.loadSubject= (req,res,next)=>{
-    const subjectData={
+exports.loadSubject = (req,res,next)=>{
+    const subjectData = {
         id_materia: req.body.id_materia
     }
     Subject.findOne({id_materia: subjectData.id_materia},(err, subject)=>{

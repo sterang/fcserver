@@ -33,7 +33,7 @@ const activitySchema = new Schema({
         required: true,
         trim: true,
     },
-    descripcion_materia:{
+    descripcion_actividad:{
         type: String,
         trim: true,
     },

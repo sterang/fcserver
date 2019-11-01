@@ -1,6 +1,6 @@
 const Activities = require('./activities_dao');
 
-exports.createActivities = (req,res,next)=>{
+exports.createActivity = (req,res,next)=>{
     const newActivities = {
         id_actividad: req.body.id_actividad,
         id_colegio: req.body.id_colegio,
@@ -8,7 +8,7 @@ exports.createActivities = (req,res,next)=>{
         id_materia: req.body.id_materia,
         id_competencia: req.body.id_competencia,
         titulo_actividad: req.body.titulo_actividad,
-        descripcion_materia: req.body.descripcion_materia,
+        descripcion_actividad: req.body.descripcion_actividad,
         video: req.body.video,
         urlvideo: req.body.urlvideo,
         lectura: req.body.lectura,
@@ -52,7 +52,7 @@ exports.allActivities = (req,res,next)=>{
     })
 }
 
-exports.editActivity = async (req, res) => {
+exports.uploadActivity = async (req, res) => {
     const activityData={
         id_actividad: req.body.id_actividad,
     }
