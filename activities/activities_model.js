@@ -23,6 +23,11 @@ const activitySchema = new Schema({
         required: true,
         trim: true,
     },
+    id_grado:{
+        type: Number,
+        required: true,
+        trim: true,
+    },
     id_competencia:{
         type: Number,
         required: true,

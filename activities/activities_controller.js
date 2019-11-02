@@ -60,6 +60,7 @@ exports.uploadActivity = async (req, res) => {
         id_colegio: req.body.id_actividad,
         id_docente: req.body.id_materia,
         id_materia: req.body.id_materia,
+        id_grado: req.body.id_grado,
         id_competencia: req.body.id_competencia,
         titulo_actividad: req.body.titulo_actividad,
         descripcion_materia: req.body.descripcion_materia,
