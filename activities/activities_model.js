@@ -58,16 +58,88 @@ const activitySchema = new Schema({
         type: String,
         trim: true,
     },
-    test:{
-        type: String,
-        trim: true,
-    },
     html:{
         type: Number,
         trim: true,
     },
     urlhtml:{
         type: String,
+        trim: true,
+    },
+    descripcion_test:{
+        type: String,
+        trim: true,
+    },
+    Q1:{
+        type: String,
+        trim: true,
+    },
+    A11:{
+        type: String,
+        trim: true,
+    },
+    A12:{
+        type: String,
+        trim: true,
+    },
+    A13:{
+        type: String,
+        trim: true,
+    },
+    A14:{
+        type: String,
+        trim: true,
+    },
+    CA1:{
+        type: Number,
+        trim: true,
+    },
+    Q2:{
+        type: String,
+        trim: true,
+    },
+    A21:{
+        type: String,
+        trim: true,
+    },
+    A22:{
+        type: String,
+        trim: true,
+    },
+    A23:{
+        type: String,
+        trim: true,
+    },
+    A24:{
+        type: String,
+        trim: true,
+    },
+    CA2:{
+        type: Number,
+        trim: true,
+    },
+    Q3:{
+        type: String,
+        trim: true,
+    },
+    A31:{
+        type: String,
+        trim: true,
+    },
+    A32:{
+        type: String,
+        trim: true,
+    },
+    A33:{
+        type: String,
+        trim: true,
+    },
+    A34:{
+        type: String,
+        trim: true,
+    },
+    CA3:{
+        type: Number,
         trim: true,
     },
 }, {timestamps: true});

@@ -4,5 +4,5 @@ module.exports=(router)=> {
     router.post('/loadActivity', Activities.loadActivity);
     router.get('/loadAllActivities', Activities.allActivities);
     router.put('/uploadActivity', Activities.uploadActivity);
-    router.delete('/deleteActivity', Activities.deleteActivity);
+    router.post('/deleteActivity', Activities.deleteActivity);
 }
