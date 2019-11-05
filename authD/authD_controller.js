@@ -1,4 +1,7 @@
 const Docente = require('./authD_dao');
+const jwt = require('jsonwebtoken');
+const bcrypt =require('bcryptjs');
+const SECRET_KEY = 'secretkey1234'
 
 exports.createDocente = async (req, res, next)=>{
     const newDocente = {
@@ -32,7 +35,21 @@ exports.loginDocente = (req, res, next)=>{
         }else{
             const resultContrasena= docenteData.contrasena;
             if(resultContrasena==teacher.contrasena){
-                res.send({teacher});
+                const expiresInA = 24 * 60 * 60;
+                const accessToken = jwt.sign({ id_docente: docenteData.id_docente }, SECRET_KEY, { expiresIn: expiresInA });
+                const dataDocente = {
+                    id_docente: teacher.id_docente,
+                    tipo_usuario: teacher.tipo_usuario,
+                    nombre_docente: teacher.nombre_docente,
+                    apellido_docente: teacher.apellido_docente,
+                    id_colegio: teacher.id_colegio,
+                    nombre_usuario: teacher.nombre_usuario,
+                    contrasena: teacher.contrasena,
+                    correo_electronico: teacher.correo_electronico,
+                    accessToken: accessToken,
+                    expiresIn: expiresInA
+                }
+                res.send({dataDocente});
             }else{
                 res.status(409).send({message: 'Something Wrong'});
             }
