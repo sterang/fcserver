@@ -42,6 +42,10 @@ const activitySchema = new Schema({
         type: String,
         trim: true,
     },
+    id_contenidoREA:{
+        type: Number,
+        trim: true,
+    },
     video:{
         type: Number,
         trim: true,
@@ -50,11 +54,19 @@ const activitySchema = new Schema({
         type: String,
         trim: true,
     },
-    lectura:{
+    documento:{
         type: Number,
         trim: true,
     },
-    urllectura:{
+    urldocumento:{
+        type: String,
+        trim: true,
+    },
+    audio:{
+        type: Number,
+        trim: true,
+    },
+    urlaudio:{
         type: String,
         trim: true,
     },
