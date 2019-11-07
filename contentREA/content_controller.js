@@ -18,13 +18,14 @@ exports.createContentREA = async (req, res, next)=>{
 }
 exports.loadContentREA= (req,res,next)=>{
     const contentData={
-        id_CREA: req.body.id_CREA
+        id_CREA: req.body.id_contenidoREA
     }
     ContentREA.findOne({id_CREA: contentData.id_CREA},(err, content)=>{
         if(err) return res.status(500).send('Server Error');
         if(!content){
             res.status(409).send({message:`Something Error ${err}`});
         }else{
+            //console.log("content",content);
             res.send({content});
         }
     })
@@ -47,7 +48,7 @@ exports.newLoadContentREA = async (req, res) => {
 }
 
 exports.deleteContentREA = async (req, res) => {
-    console.log(req.body)
+    //console.log(req.body)
     const contentData = {
         id_CREA: req.body.id_CREA
     }
