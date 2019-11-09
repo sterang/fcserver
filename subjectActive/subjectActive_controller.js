@@ -8,6 +8,7 @@ exports.createSubjectActive = async (req, res, next)=>{
         id_grado: req.body.id_grado,
         id_docente: req.body.id_docente,
         id_colegio: req.body.id_colegio,
+        url_imagen: req.body.url_imagen
     }
     console.log(newSubjectActive);
     await SubjectActive.create(newSubjectActive,(err,subjectActive)=>{

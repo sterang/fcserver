@@ -42,6 +42,17 @@ exports.allContent = (req,res,next)=>{
     })
 }
 
+exports.allContentMovil = (req,res,next)=>{
+    ContentREA.find(function(err, contents){
+        if(err) return res.status(500).send('Server Error');
+        if(!contents){
+            res.status(409).send({message:'Something Error'});
+        } else{
+            res.send({contents});
+        }
+    })
+}
+
 exports.newLoadContentREA = async (req, res) => {
     const contentsData = await ContentREA.find();
     res.json(contentsData);

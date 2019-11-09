@@ -33,6 +33,11 @@ const subjectActiveSchema = new Schema({
         required: true,
         trim: true,
     },
+    url_imagen:{
+        type: String,
+        required: true,
+        trim: true,
+    },
 },{timestamps:true});
 
 module.exports = subjectActiveSchema;
