@@ -41,7 +41,20 @@ exports.allContent = (req,res,next)=>{
         }
     })
 }
-
+exports.SearchContentREA= (req,res,next)=>{
+    const contentData={
+        nombre_CREA: req.body.nombre_CREA,
+    }
+    //contentData.nombre_CREA /^Sumar/i
+    ContentREA.find({nombre_CREA: { $regex: contentData.nombre_CREA, $options: "xi" }},(err, content)=>{
+        if(err) return res.status(500).send('Server Error');
+        if(!content){
+            res.status(409).send({message:`Something Error ${err}`});
+        }else{
+            res.send({content});
+        }
+    })
+}
 exports.allContentMovil = (req,res,next)=>{
     ContentREA.find(function(err, contents){
         if(err) return res.status(500).send('Server Error');
