@@ -9,14 +9,24 @@ const eventoSchema = new Schema({
         required: true,
         trim: true
     },
-    fecha:{
+    data_start:{
         type: String,
-        required:true,
+        trim: true
+    },
+    hour_start:{
+        type: String,
+        trim: true
+    },
+    data_end:{
+        type: String,
+        trim: true
+    },
+    hour_end:{
+        type: String,
         trim: true
     },
     id_actividad:{
         type:Number,
-        required:true,
         trim: true
     },
     id_estudiante:{
@@ -47,10 +57,33 @@ const eventoSchema = new Schema({
     check_video:{
         type:Number,
         trim: true
+    },
+    check_document:{
+        type:Number,
+        trim: true
+    },
+    check_a1:{
+        type:Number,
+        trim: true
+    },
+    check_a2:{
+        type:Number,
+        trim: true
+    },
+    check_a3:{
+        type:Number,
+        trim: true
+    },
+    check_profile:{
+        type:Number,
+        trim: true
     }
+
 })
 
+
+    //id_evento	data_start	hour_start	data_hours_end	hour_end
+    //	id_actividad	id_estudiante	check_download	check_inicio	
+    //check_fin	check_answer	count_video	check_video	check_document
+    //	check_a1	check_a2	check_a3	check_profile
 module.exports = eventoSchema;
-//id_evento	fecha	id_actividad	id_estudiante	
-//check_download	check_inicio	check_fin	
-//check_answer	count_video	check_video
